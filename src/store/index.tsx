@@ -2,28 +2,37 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ITodo } from "../domains";
 
-const initialState: ITodo = {
-  todoId: "1",
-  todoName: "Wear shoes",
-  todoDescription: "Send Shoes to the cobbler",
-};
+const initialState: ITodo[] = [
+  {
+    todoId: "1",
+    todoName: "Wear shoes",
+    todoDescription: "Send Shoes to the cobbler",
+  },
+  {
+    todoId: "2",
+    todoName: "Wear shoes",
+    todoDescription: "Send Shoes to the cobbler",
+  },
+];
 
 export const todoSlice = createSlice({
-  name: "Todo List",
+  name: "TodoList",
   initialState,
   reducers: {
-    updateTodo: (state, action: PayloadAction<ITodo>) => {
-      state = action.payload;
+    addTodo: (state, action: PayloadAction<ITodo>) => {
+      const updateState = [...state, action.payload];
+      return updateState;
     },
     // Use this to set the isAuthenticated state to true after verifying the tokens
 
-    removeTodo: (state) => {
-      const newState = { ...state };
-      return newState;
+    removeTodo: (state, action: PayloadAction<string>) => {
+      const id = action.payload;
+      const updateState = state.filter((todo: ITodo) => todo.todoId !== id);
+      return updateState;
     },
   },
 });
 // Action creators are generated for each case reducer function
-export const { updateTodo, removeTodo } = todoSlice.actions;
+export const { addTodo, removeTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;

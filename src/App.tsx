@@ -1,10 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { useAppSelector } from "./store/hooks";
+import { ITodo } from "./domains";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  const todoList: ITodo | ITodo[] = useAppSelector((state) => state?.todo);
+  console.log(todoList);
 
   return (
     <>
@@ -21,15 +26,21 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <h4>test test</h4>
+        {Array.isArray(todoList) &&
+          todoList.map((todo: ITodo) => (
+            <ul key={todo.todoId}>
+              <li>{todo?.todoId}</li>
+              <li>{todo?.todoName}</li>
+              <li>{todo?.todoDescription}</li>
+            </ul>
+          ))}
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
