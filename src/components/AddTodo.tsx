@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useAppDispatch } from "../store/hooks";
 import { addTodo } from "../store"; // Import uuid for generating unique IDs
 
-
-
 interface IAddTodo {
   toggleForm: () => void;
 }
@@ -40,6 +38,9 @@ export const AddTodo = ({ toggleForm }: IAddTodo) => {
     <section className="add-todo">
       <form onSubmit={updateList}>
         <div className="add-todo-input">
+          <span className="left-icon" onClick={toggleForm}>
+            X
+          </span>
           <label className="add-label" htmlFor="title">
             Title
           </label>
@@ -68,7 +69,7 @@ export const AddTodo = ({ toggleForm }: IAddTodo) => {
         <div className="add-btn">
           <button
             className={validateSubmit ? `btn-disabled` : `btn-active`}
-            disabled={validateSubmit}
+            disabled={validateSubmit || formStatus === true}
           >
             {formStatus ? "Adding..." : "Add task"}
           </button>

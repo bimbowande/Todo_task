@@ -5,13 +5,20 @@ import { ItemList } from "./components/ItemList";
 import { AddTodo } from "./components/AddTodo";
 import { useState } from "react";
 import { ActionBtn } from "./components/ActionBtn";
+import { useAppDispatch } from "./store/hooks";
+import { removeTodo } from "./store";
 
 function App() {
+  const dispatch = useAppDispatch();
   const [toggleForm, updateToggleForm] = useState(false);
   const todoList: ITodo | ITodo[] = useAppSelector((state) => state?.todo);
 
   const handleToggleForm = () => {
     updateToggleForm(!toggleForm);
+  };
+
+  const removeTodoItem = (todoId: string) => {
+    dispatch(removeTodo(todoId));
   };
 
   return (
@@ -21,15 +28,18 @@ function App() {
       </header>
       <ActionBtn handleAction={handleToggleForm} />
       {toggleForm && <AddTodo toggleForm={handleToggleForm} />}
-      {Array.isArray(todoList) &&
-        todoList.map((todo: ITodo) => (
-          <ItemList
-            key={todo.todoId}
-            todoId={todo.todoId}
-            todoName={todo?.todoName}
-            todoDescription={todo?.todoDescription}
-          />
-        ))}
+      <section className="todo-list">
+        {Array.isArray(todoList) &&
+          todoList.map((todo: ITodo) => (
+            <ItemList
+              key={todo.todoId}
+              todoId={todo.todoId}
+              todoName={todo?.todoName}
+              todoDescription={todo?.todoDescription}
+              removeItem={removeTodoItem}
+            />
+          ))}
+      </section>
     </main>
   );
 }

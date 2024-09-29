@@ -33,8 +33,16 @@ body,
   border: 1px solid #f1ecec;
 }
 
+.todo-list {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 .article-container {
-  margin: 15px 0;
+  margin: 5px 0;
+  width: 32%;
   padding: 16px;
   border-radius: 16px;
 }
@@ -48,8 +56,9 @@ body,
 
 .add-todo > .add-label > input {
   padding: 5px;
-  border: 1px solid hsla(0, 0%, 55%, 0.452);
+  border: 1px solid hsla(0, 0%, 75%, 0.452);
   margin-left: 10px;
+  border: none !important;
 }
 .add-todo-input {
   display: flex;
@@ -65,7 +74,7 @@ body,
 }
 .add-todo-input > input {
   padding: 15px;
-  border: 1px solid hsla(0, 0%, 55%, 0.452);
+  background: hsla(0, 4%, 83%, 0.452);
   margin-bottom: 10px;
   width: 100%;
   border-radius: 5px;
@@ -73,6 +82,8 @@ body,
 }
 .add-btn {
   text-align: right;
+  display: flex;
+  gap: 10px;
   margin-top: 10px;
 }
 .add-btn button {
@@ -89,4 +100,11 @@ body,
 .btn-disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.left-icon {
+  text-align: right;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(87, 8, 13);
 }

@@ -1,5 +1,6 @@
 export interface ITodo {
-    todoId: string | null;
-    todoName: string | null;
-    todoDescription?: string;
-  }
+  todoId: string | null;
+  todoName: string | null;
+  todoDescription?: string;
+  removeItem?: (todoId: string) => void;
+}
