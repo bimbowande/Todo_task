@@ -57,6 +57,12 @@ body,
 .article-container > .ticker {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .article-container > .ticker {
+    margin-top: 0px;
+  }
+}
 .article-container h3 {
   font-size: 1.5rem;
   font-weight: 300;
@@ -75,9 +81,16 @@ body,
   top: 10px;
   left: 40px;
 }
+
 .article-remove-confirmation button {
   margin-left: 10px;
   font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+  .article-remove-confirmation button {
+    margin-bottom: 10px;
+    width: 100px;
+  }
 }
 
 .article-remove-confirmation > .del-item {
