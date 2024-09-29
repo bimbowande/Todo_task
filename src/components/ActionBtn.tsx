@@ -5,7 +5,7 @@ interface IAction {
 export const ActionBtn = ({ handleAction }: IAction) => {
   return (
     <div className="main-btn_section">
-      <button onClick={handleAction}>New Task</button>
+      <button onClick={handleAction}> Add New Task</button>
     </div>
   );
 };

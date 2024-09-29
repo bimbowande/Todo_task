@@ -22,25 +22,30 @@ function App() {
   };
 
   return (
-    <main className="main-wrapper">
-      <header className="main-header">
-        <h2>Todo List</h2>
-      </header>
-      <ActionBtn handleAction={handleToggleForm} />
-      {toggleForm && <AddTodo toggleForm={handleToggleForm} />}
-      <section className="todo-list">
-        {Array.isArray(todoList) &&
-          todoList.map((todo: ITodo) => (
-            <ItemList
-              key={todo.todoId}
-              todoId={todo.todoId}
-              todoName={todo?.todoName}
-              todoDescription={todo?.todoDescription}
-              removeItem={removeTodoItem}
-            />
-          ))}
-      </section>
-    </main>
+    <>
+      <main className="main-wrapper">
+        <header className="main-header">
+          <h2>Todo List</h2>
+        </header>
+        <ActionBtn handleAction={handleToggleForm} />
+        {toggleForm && <AddTodo toggleForm={handleToggleForm} />}
+        <section className="todo-list">
+          {Array.isArray(todoList) && todoList.length > 0 ? (
+            todoList.map((todo: ITodo) => (
+              <ItemList
+                key={todo.todoId}
+                todoId={todo.todoId}
+                todoName={todo?.todoName}
+                todoDescription={todo?.todoDescription}
+                removeItem={removeTodoItem}
+              />
+            ))
+          ) : (
+            <p>You have no todo task</p>
+          )}
+        </section>
+      </main>
+    </>
   );
 }
 

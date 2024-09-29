@@ -14,7 +14,7 @@ export const AddTodo = ({ toggleForm }: IAddTodo) => {
     desc: "",
   });
   const [formStatus, updateStatus] = useState(false);
-  const validateSubmit = !todoData.desc || !todoData.title;
+  const validateSubmit = !todoData.title;
   const updateForm = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     updateTodoData({ ...todoData, [name]: value });
@@ -42,7 +42,7 @@ export const AddTodo = ({ toggleForm }: IAddTodo) => {
             X
           </span>
           <label className="add-label" htmlFor="title">
-            Title
+            Task
           </label>
           <input
             onChange={updateForm}
@@ -55,7 +55,7 @@ export const AddTodo = ({ toggleForm }: IAddTodo) => {
         </div>
         <div className="add-todo-input">
           <label className="add-label" htmlFor="desc">
-            Description
+            Note
           </label>
           <input
             onChange={updateForm}
