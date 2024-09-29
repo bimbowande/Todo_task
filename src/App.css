@@ -66,6 +66,7 @@ body,
 .article-remove-confirmation > .del-item {
   background-color: rgb(63, 5, 19);
   color: #fff;
+  font-weight: 600;
 }
 .main-btn_section {
   margin-bottom: 20px;
