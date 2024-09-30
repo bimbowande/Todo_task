@@ -42,7 +42,7 @@ export const ItemList = ({
               remove
             </button>
             <button className="del-cancel" onClick={() => handleCancelForm()}>
-              Cancel
+              cancel
             </button>
           </div>
         )}

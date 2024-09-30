@@ -18,8 +18,15 @@ body {
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
+ 
 }
 
+.quicksand-font {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 .main-wrapper {
   width: 60%;
   margin: 0 auto;
@@ -70,6 +77,11 @@ body {
   align-items: flex-start;
 }
 @media screen and (max-width: 768px) {
+  .article-content input {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
   .article-container {
     flex-direction: column;
     gap: 4px;
@@ -90,16 +102,17 @@ body {
 }
 @media screen and (max-width: 768px) {
   .article-container h3 {
-    font-size: 1rem;
-    width: 150px;
+    font-size: 1.3rem;
+    width: 100% !important;
   }
   .article-container p {
     font-size: 0.78rem;
   }
 }
+
 .article-remove-confirmation {
   position: relative;
-  top: 10px;
+  top: 0px;
   left: 40px;
 }
 @media screen and (max-width: 768px) {
@@ -135,7 +148,6 @@ body {
 
 .add-todo > .add-label > input {
   padding: 5px;
-  border: 1px solid hsla(0, 0%, 75%, 0.452);
   margin-left: 10px;
   border: none !important;
 }
@@ -172,7 +184,6 @@ body {
   margin-top: 10px;
 }
 .add-btn button {
-  width: 150px;
   color: #fff;
   border-radius: 5px;
 }
