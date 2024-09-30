@@ -1,7 +1,7 @@
 import "./App.css";
 import { useAppSelector } from "./store/hooks";
 import { ITodo } from "./domains";
-import { ItemList } from "./components/ItemList";
+import { ItemList } from "./components/ItemList/ItemList";
 import { AddTodo } from "./components/AddTodo";
 import { useState } from "react";
 import { ActionBtn } from "./components/ActionBtn";
