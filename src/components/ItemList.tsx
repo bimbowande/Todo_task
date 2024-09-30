@@ -13,12 +13,12 @@ export const ItemList = ({
   };
   return (
     <>
-      <article className="article-container">
+      <article className="article-container ">
         <div className="article-content">
           <input
             type="checkbox"
             checked={cancelForm}
-            onClick={() => handleCancelForm()}
+            onChange={() => handleCancelForm()}
           />
           <div className="article-text">
             <h3

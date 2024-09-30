@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <main className="main-wrapper">
+      <main className="main-wrapper quicksand-font">
         <header className="main-header">
           <h2>Todo List</h2>
         </header>

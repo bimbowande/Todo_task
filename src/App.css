@@ -13,6 +13,12 @@ body,
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
 
 .main-wrapper {
   width: 60%;
