@@ -54,6 +54,21 @@ body,
   display: flex;
   gap: 20px;
 }
+
+.article-content {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.article-content input {
+  align-items: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .article-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
 .article-container > .ticker {
   margin-top: 10px;
 }
@@ -81,6 +96,13 @@ body,
   top: 10px;
   left: 40px;
 }
+@media screen and (max-width: 768px) {
+  .article-remove-confirmation {
+    display: flex;
+    flex-direction: row;
+    left: 0;
+  }
+}
 
 .article-remove-confirmation button {
   margin-left: 10px;
@@ -89,7 +111,6 @@ body,
 @media screen and (max-width: 768px) {
   .article-remove-confirmation button {
     margin-bottom: 10px;
-    width: 100px;
   }
 }
 
