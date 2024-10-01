@@ -9,9 +9,11 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<Omit<ITodo, "todoId">>) => {
+      const recentId = state[state.length - 1]?.todoId || 0;
+      console.log(recentId);
       const newTodo = {
         ...action.payload,
-        todoId: (state.length + 1).toString(),
+        todoId: (+recentId + 1).toString(),
       };
       const updateState = [...state, newTodo];
       return updateState;

@@ -12,6 +12,7 @@ function App() {
   const dispatch = useAppDispatch();
   const [toggleForm, updateToggleForm] = useState(false);
   const todoList: ITodo | ITodo[] = useAppSelector((state) => state?.todo);
+  console.log(todoList);
 
   const handleToggleForm = () => {
     updateToggleForm(!toggleForm);
