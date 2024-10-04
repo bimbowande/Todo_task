@@ -20,6 +20,7 @@ export const ItemList = ({
             checked={cancelForm}
             onChange={() => handleCancelForm()}
           />
+          <span className={`input-checkbox ${cancelForm && "blue-bg"}`}></span>
           <div className="article-text">
             <h3
               style={
